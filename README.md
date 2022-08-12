@@ -36,7 +36,7 @@ The Canvas library
 
 ## **Implementation Timeline**
 
-**Friday Afternoon & Weekend:** Setup project, including getting webpack up and running. Setup the canvas and get canvas to show up on the screen, and spend time getting comfortable with the Canvas API. And make basic movements.
+**Friday Afternoon & Weekend:** Setup project, including getting webpack up and running. Setup the canvas and get canvas to show up on the screen, and spend time getting comfortable with the Canvas. And make basic movements.
 
 **Monday:** Make the jump function
 
