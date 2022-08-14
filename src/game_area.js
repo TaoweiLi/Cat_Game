@@ -9,8 +9,8 @@ class GameArea {
 
     document.addEventListener('keydown', (event) => {
       var code = event.code;
-      if (code == "Space" && this.cat.hitBottom(this.canvas.height)) {
-        this.cat.meow();
+      if (code == "Space" && this.cat.hitBottom(this.canvas.height) && !this.cat.isGameOver) {
+        this.cat.meowSound();
         this.cat.quickJump(600);
       }
     }, false);
@@ -27,27 +27,33 @@ class GameArea {
   update() {
     for (let i = 0; i < this.obstacles.length; i += 1) {
       if (this.cat.isHit(this.obstacles[i])) {
-        return; //不继续画了。
+        this.cat.gameOver();
       }
     }
 
     this.clear();
-
     this.frameNo += 1;
-    if (this.frameNo === 1 || this.everyinterval(150)) {
+
+
+    if ((this.frameNo === 1 || this.everyinterval(150)) && !this.cat.isGameOver) {
       let canvasWidth = this.canvas.width;
       let canvasHeight = this.canvas.height;
       let height = Math.floor(Math.random() * (Obstacle.maxHeight - Obstacle.minHeight + 1) + Obstacle.minHeight);
       this.obstacles.push(new Obstacle("green", 10, height, canvasWidth, canvasHeight - height));
     }
 
+
+
     for (let i = 0; i < this.obstacles.length; i += 1) {
-      this.obstacles[i].x += -1;
+      if (!this.cat.isGameOver) {  //  move obstacles if the game is not over
+        this.obstacles[i].x += -1;
+      }
+      
       if (this.obstacles[i].x > 0) {
         this.obstacles[i].render(this.canvasContext);
       }
     }
-    
+
     this.obstacles = this.obstacles.filter((el) => el.x > 0)
 
     // myScore.text = "SCORE: " + this.frameNo;

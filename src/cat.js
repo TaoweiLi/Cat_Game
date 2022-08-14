@@ -1,5 +1,5 @@
-const cat_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat01_run_12fps.gif"
-const cat_die_path = ""
+const cat_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat01_run_12fps.gif";
+const cat_die_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat01_die_12fps.gif";
 
 class Cat extends Component {
   constructor(color, width, height, x, y) {
@@ -15,13 +15,13 @@ class Cat extends Component {
     this.isGameOver = false;
 
     // Load cat gif resources
-    var cat_run_gif = GIF();
-    cat_run_gif.load(cat_run_path);
+    this.cat_run_gif = GIF();
+    this.cat_run_gif.load(cat_run_path);
 
-    var cat_die_gif = GIF();
-    cat_die_gif.load(cat_die_path);
+    this.cat_die_gif = GIF();
+    this.cat_die_gif.load(cat_die_path);
 
-    this.currentGif = cat_run_gif;
+    this.currentGif = this.cat_run_gif;
   }
 
   render(canvas) {
@@ -31,10 +31,16 @@ class Cat extends Component {
     canvas.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 
-  meow() {
-    var audio = new Audio('http://soundbible.com/grab.php?id=1286&type=mp3');
+  meowSound() {
+    let audio = new Audio('http://soundbible.com/grab.php?id=1286&type=mp3');
     audio.play();
   }
+
+  hitSound() {
+    let audio = new Audio('http://soundbible.com/grab.php?id=995&type=mp3');
+    audio.play();
+  }
+  
 
   quickJump(interval) {
     if (this.hitBottom(this.canvasHeight)) {
@@ -79,6 +85,10 @@ class Cat extends Component {
   }
 
   gameOver() {
-
+    if(!this.isGameOver){
+      this.hitSound();
+      this.currentGif = this.cat_die_gif;
+      this.isGameOver = true;
+    }
   }
 }
