@@ -1,3 +1,6 @@
+const cat_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat01_run_12fps.gif"
+const cat_die_path = ""
+
 class Cat extends Component {
   constructor(color, width, height, x, y) {
     super(width, height, x, y);
@@ -7,16 +10,25 @@ class Cat extends Component {
     this.speedY = 0;  
     this.gravity = 3;
     this.gravitySpeed = 0;
-    this.isJump = false;
-    this.canvasHeight = y 
+    this.isJump = false;  
+    this.canvasHeight = y;
+    this.isGameOver = false;
 
-    this.cat_run_gif = GIF()
-    this.cat_run_gif.load(cat_run_path)
+    // Load cat gif resources
+    var cat_run_gif = GIF();
+    cat_run_gif.load(cat_run_path);
+
+    var cat_die_gif = GIF();
+    cat_die_gif.load(cat_die_path);
+
+    this.currentGif = cat_run_gif;
   }
 
   render(canvas) {
-    canvas.fillStyle = this.color;
-    canvas.fillRect(this.x, this.y, this.width, this.height);
+    // canvas.fillStyle = this.color;
+    // canvas.fillRect(this.x, this.y, this.width, this.height);
+    canvas.drawImage(this.currentGif.image, this.x - 15, this.y - 23);
+    canvas.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 
   meow() {
@@ -70,5 +82,3 @@ class Cat extends Component {
 
   }
 }
-
-const cat_run_path = "/Users/taoweili/workspace/Bootcamp/taowei_li_AAClasswork/Cat_Game_Final_Proposal/asset/catset_assets/catset_gifs/cat01_gifs/cat01_run_12fps.gif"

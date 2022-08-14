@@ -1,8 +1,6 @@
 class GameArea {
   constructor(gameCanvas) {
     this.canvas = gameCanvas
-    // this.canvas.width = 480;
-    // this.canvas.height = 270;
     this.cat = new Cat("red", 10, 10, 10, this.canvas.height);
     this.obstacles = [];
     this.canvasContext = this.canvas.getContext("2d");
@@ -16,14 +14,6 @@ class GameArea {
         this.cat.quickJump(600);
       }
     }, false);
-
-    // document.addEventListener('keyup', (event) => {
-    //   // var name = event.key; 
-    //   var code = event.code;
-    //   if (code == "Space") {
-    //     this.cat.fall();
-    //   }
-    // }, false);
   }
 
   clear() {
@@ -50,10 +40,16 @@ class GameArea {
       let height = Math.floor(Math.random() * (Obstacle.maxHeight - Obstacle.minHeight + 1) + Obstacle.minHeight);
       this.obstacles.push(new Obstacle("green", 10, height, canvasWidth, canvasHeight - height));
     }
+
     for (let i = 0; i < this.obstacles.length; i += 1) {
       this.obstacles[i].x += -1;
-      this.obstacles[i].render(this.canvasContext);
+      if (this.obstacles[i].x > 0) {
+        this.obstacles[i].render(this.canvasContext);
+      }
     }
+    
+    this.obstacles = this.obstacles.filter((el) => el.x > 0)
+
     // myScore.text = "SCORE: " + this.frameNo;
     // myScore.update();
     this.cat.newPosition(this.canvas.height);
