@@ -7,25 +7,31 @@ class Obstacle extends Component {
 
   static assets = [
     {
-      'urlPath' : "",
-      'xOffset' : 0,
-      "yOffset" : 0
+      'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/ob1.png",
+      'width' : 10,
+      'height': 20,
+      'xOffset' : 22,
+      'yOffset' : 19,
+      'displayRatio' : 0.5
     }
   ]
 
-  constructor(color, width, height, x, y) {
-    super(width, height, x, y);
-    this.color = color;
+  constructor(x, canvasHeight) {
     let random = Math.floor(Math.random() * Obstacle.assets.length);
-    this.asset = Obstacle.assets[random]
+    let randomAsset = Obstacle.assets[random]
+
+    super(randomAsset["width"], randomAsset["height"], x, canvasHeight - randomAsset["height"]);
+
+    this.asset = randomAsset
     this.image = new Image();
     this.image.src = this.asset["urlPath"]
   }
 
-  render(context) {
-    // context.fillStyle = this.color;
-    // context.fillRect(this.x, this.y, this.width, this.height);
-    canvas.drawImage(this.currentGif.image, this.x - 15, this.y - 23);
-    canvas.strokeRect(this.x, this.y, this.width, this.height); // for debug
+  // draw a new obstacle
+  render(canvasContext) {
+    // canvasContext.fillStyle = this.color;
+    // canvasContext.fillRect(this.x, this.y, this.width, this.height);
+    canvasContext.drawImage(this.image, this.x - this.asset["xOffset"], this.y - this.asset["yOffset"], this.image.width * this.asset["displayRatio"], this.image.height * this.asset["displayRatio"]);
+    canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 }

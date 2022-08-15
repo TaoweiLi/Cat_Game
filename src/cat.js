@@ -8,9 +8,9 @@ class Cat extends Component {
     this.color = color;
     this.speedX = 0;
     this.speedY = 0;  
-    this.gravity = 3;
-    this.gravitySpeed = 0;
-    this.isJump = false;  
+    this.gravity = 3;  //incremental rate
+    this.gravitySpeed = 0; //current up/down speed
+    // this.isJump = false;  //can use it to make double/triple jump!
     this.canvasHeight = y;
     this.isGameOver = false;
 
@@ -24,56 +24,59 @@ class Cat extends Component {
     this.currentGif = this.cat_run_gif;
   }
 
-  render(canvas) {
-    // canvas.fillStyle = this.color;
-    // canvas.fillRect(this.x, this.y, this.width, this.height);
-    canvas.drawImage(this.currentGif.image, this.x - 15, this.y - 23);
-    canvas.strokeRect(this.x, this.y, this.width, this.height); // for debug
+  render(canvasContext) {   //draw cat pic
+    // canvasContext.fillStyle = this.color;
+    // canvasContext.fillRect(this.x, this.y, this.width, this.height);
+    canvasContext.drawImage(this.currentGif.image, this.x - 15, this.y - 23);
+    canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 
   meowSound() {
     let audio = new Audio('http://soundbible.com/grab.php?id=1286&type=mp3');
-    audio.play();
+    if (soundOn) {
+      audio.play();
+    }
   }
 
   hitSound() {
     let audio = new Audio('http://soundbible.com/grab.php?id=995&type=mp3');
-    audio.play();
+     if (soundOn) {
+      audio.play();
+    }
   }
   
-
-  quickJump(interval) {
+  quickJump(interval) {  //only aloowed jump once at a time.
     if (this.hitBottom(this.canvasHeight)) {
       this.jump()
       setTimeout(this.fall.bind(this), interval);
-    }
+    } 
   }
 
   jump() {
     if (this.hitBottom(this.canvasHeight)) {
-      this.gravity = -1 * this.gravity;
-      this.isJump = true;
+      this.gravity = -1 * this.gravity;  //reversed gravity make jump
+      // this.isJump = true;
     }
   }
 
   fall() {
     if (!this.hitBottom(this.canvasHeight)) {
-      this.gravity = Math.abs(this.gravity);
-      this.isJump = false;
+      this.gravity = Math.abs(this.gravity);  //positive gravity make fall
+      // this.isJump = false;
     }
   }
 
   newPosition(canvasHeight) {
-    this.gravitySpeed = this.gravity;
+    this.gravitySpeed = this.gravity;  // 匀速上下
     this.x += this.speedX;
     this.y += this.speedY + this.gravitySpeed;
     this.hitBottom(canvasHeight);
   }
   
   hitBottom(canvasHeight) {
-    var rockbottom = canvasHeight - this.height;
-    if (this.y >= rockbottom) {
-      this.y = rockbottom;
+    let catBottom = this.y + this.height;
+    if (catBottom >= canvasHeight) {
+      this.y = canvasHeight - this.height;;
       this.gravitySpeed = 0;
       return true
     }

@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const canvasEl = document.getElementsByTagName(\"canvas\")[0];\n  const gameArea = new GameArea(canvasEl)\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("var canvasEl\nvar gameArea\nvar soundOn = true\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  canvasEl = document.getElementsByTagName(\"canvas\")[0];\n  gameArea = new GameArea(canvasEl)\n});\n\n// sound  control\ndocument.getElementById(\"soundBotton\").innerText = \"Sound On\";\ndocument.getElementById(\"soundBotton\").addEventListener(\"click\", soundSwitch);\nfunction soundSwitch() {\n  if (soundOn) {\n    document.getElementById(\"soundBotton\").innerText = \"Sound Off\";\n    soundOn = false;\n    document.getElementById(\"soundBotton\").blur()  //delete the focus\n  } else {\n    document.getElementById(\"soundBotton\").innerText = \"Sound On\";\n    soundOn = true;\n    document.getElementById(\"soundBotton\").blur()  \n  }\n}\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
