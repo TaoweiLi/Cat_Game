@@ -1,5 +1,10 @@
-const cat_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat02_run_12fps.gif";
-const cat_die_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat01_die_12fps.gif";
+const cat1_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat03_run_12fps.gif";
+const cat1_die_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat03_die_12fps.gif";
+const cat2_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat04_run_12fps.gif";
+const cat2_die_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat04_die_12fps.gif";
+const cat3_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat05_run_12fps.gif";
+const cat3_die_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat05_die_12fps.gif";
+
 
 class Cat extends Component {
   constructor(color, width, height, x, y) {
@@ -15,13 +20,13 @@ class Cat extends Component {
     this.isGameOver = false;
 
     // Load cat gif resources
-    this.cat_run_gif = GIF();
-    this.cat_run_gif.load(cat_run_path);
+    this.cat1_run_gif = GIF();
+    this.cat1_run_gif.load(cat1_run_path);
 
-    this.cat_die_gif = GIF();
-    this.cat_die_gif.load(cat_die_path);
+    this.cat1_die_gif = GIF();
+    this.cat1_die_gif.load(cat1_die_path);
 
-    this.currentGif = this.cat_run_gif;
+    this.currentGif = this.cat1_run_gif;
   }
 
   render(canvasContext) {   //draw cat pic
@@ -91,7 +96,7 @@ class Cat extends Component {
   gameOver() {
     if(!this.isGameOver){
       this.hitSound();
-      this.currentGif = this.cat_die_gif;
+      this.currentGif = this.cat1_die_gif;
       this.isGameOver = true;
     }
   }
