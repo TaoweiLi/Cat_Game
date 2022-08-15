@@ -28,6 +28,7 @@ class Cat extends Component {
     // canvasContext.fillStyle = this.color;
     // canvasContext.fillRect(this.x, this.y, this.width, this.height);
     canvasContext.drawImage(this.currentGif.image, this.x - 15, this.y - 23);
+    // canvasContext.drawImage(this.)
     // canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 
