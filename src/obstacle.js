@@ -14,6 +14,15 @@ class Obstacle extends Component {
       'yOffset' : 19,
       'displayRatio' : 0.5
     }
+,
+    {
+      'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/book_shelf_1.png",
+      'width': 20,
+      'height': 11,
+      'xOffset': 13,
+      'yOffset': 15,
+      'displayRatio': 0.6
+    }
   ]
 
   constructor(x, canvasHeight) {

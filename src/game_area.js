@@ -6,7 +6,7 @@ class GameArea {
     this.score = new ScoreBar(10, 0, 220, 20);
   
     this.canvasContext = this.canvas.getContext("2d");
-    this.frameNo = 0;  //第几张frame
+    this.frameNo = 0;  //start with frame #0
     this.interval = setInterval(this.update.bind(this), 20); // (1000/20)=50 frames per second
 
     document.addEventListener('keydown', (event) => {
