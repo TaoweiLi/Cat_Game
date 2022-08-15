@@ -1,4 +1,4 @@
-const cat_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat01_run_12fps.gif";
+const cat_run_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat02_run_12fps.gif";
 const cat_die_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cat01_die_12fps.gif";
 
 class Cat extends Component {
