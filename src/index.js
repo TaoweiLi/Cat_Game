@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // sound  control
-document.getElementById("soundBotton").innerText = "Sound On";
-document.getElementById("soundBotton").addEventListener("click", soundSwitch);
+document.getElementById("soundButton").innerText = "Sound On";
+document.getElementById("soundButton").addEventListener("click", soundSwitch);
 function soundSwitch() {
   if (soundOn) {
-    document.getElementById("soundBotton").innerText = "Sound Off";
+    document.getElementById("soundButton").innerText = "Sound Off";
     soundOn = false;
-    document.getElementById("soundBotton").blur()  //delete the focus
+    document.getElementById("soundButton").blur()  //delete the focus
   } else {
-    document.getElementById("soundBotton").innerText = "Sound On";
+    document.getElementById("soundButton").innerText = "Sound On";
     soundOn = true;
-    document.getElementById("soundBotton").blur()  
+    document.getElementById("soundButton").blur()  
   }
 }

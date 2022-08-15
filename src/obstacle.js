@@ -18,9 +18,9 @@ class Obstacle extends Component {
     {
       'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/book_shelf_1.png",
       'width': 20,
-      'height': 11,
-      'xOffset': 13,
-      'yOffset': 15,
+      'height': 15,
+      'xOffset': 18,
+      'yOffset': 16.5,
       'displayRatio': 0.6
     }
   ]
@@ -41,6 +41,6 @@ class Obstacle extends Component {
     // canvasContext.fillStyle = this.color;
     // canvasContext.fillRect(this.x, this.y, this.width, this.height);
     canvasContext.drawImage(this.image, this.x - this.asset["xOffset"], this.y - this.asset["yOffset"], this.image.width * this.asset["displayRatio"], this.image.height * this.asset["displayRatio"]);
-    canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
+    // canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 }
