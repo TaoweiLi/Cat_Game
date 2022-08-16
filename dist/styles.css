@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 
-/* 
+
 body {
   width: 100vw;
   height: 100vh;
 
-} */
+} 
 
 #myCanvas {
   border: rgba(160, 102, 20, 0.437) solid;
@@ -30,7 +30,6 @@ body {
   /* text-shadow: 0 0 10px #ff7b00, 0 0 1px #ff88009e; */
   letter-spacing: 1px;
   word-spacing: 15px;
-
 }
 
 #gameInstrction {
@@ -42,31 +41,31 @@ body {
 }
 
 
-/* 
+
 #soundButton {
   background-color: rgba(253, 232, 39, 0.898);
-  border-radius: 5px;
+  border-radius: 15px;
   border: none;
-  color: white;
+  color: (9, 159, 193);
   padding: 2px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 4px 2px;
+  margin: 3px 30px;
   cursor: pointer;
 
-} */
+}
 
 button {
   display: block;
-  border-radius: 10px;
+  border-radius: 15px;
   transition-duration: 0.4s;
   background: rgba(253, 232, 39, 0.898);
   border: rgba(253, 232, 39, 0.898);
   font-weight: bold;
-  width: 90px;
+  width: 100px;
   height: 50px;
   color: rgb(9, 159, 193);
   outline: none;
@@ -74,7 +73,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   border: none;
   cursor: pointer;
-  margin: 20px;
+  margin: 30px;
   
 }
 
@@ -95,7 +94,7 @@ button:hover {
 }
 
 #cat1Button, #cat2Button, #cat3Button {
-  margin-top: -46px;
+  margin-top: -48px;
 }
 
 /* #start, #game-over {

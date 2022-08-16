@@ -50,7 +50,7 @@ class Cat extends Component {
     this.cat1_run_gif.load(catAsset["cat_run_path"]);
 
     this.cat1_die_gif = GIF();
-    this.cat1_die_gif.load(catAsset["cat_die_path"]);
+    this.cat1_die_gif.load(catAsset["cat_die_path"])
 
     this.currentGif = this.cat1_run_gif;
   }
@@ -60,7 +60,9 @@ class Cat extends Component {
     // canvasContext.fillStyle = this.color;
     // canvasContext.fillRect(this.x, this.y, this.width, this.height);
     let cImg = this.currentGif.image
-    canvasContext.drawImage(cImg, this.x - cImg.width*1.7, this.y - cImg.height*2.8, cImg.width * this.renderRatio, cImg.height * this.renderRatio);
+    if(cImg !== null) {
+          canvasContext.drawImage(cImg, this.x - cImg.width*1.7, this.y - cImg.height*2.8, cImg.width * this.renderRatio, cImg.height * this.renderRatio);
+    }
     // canvasContext.drawImage(this.)
     // canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }

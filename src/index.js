@@ -60,7 +60,8 @@ function catSwitch(catName) {
 document.getElementById("restartButton").addEventListener("click", () => {
   restart();
   // document.getElementById("cat1").blur();
-  document.getElementById("cat1").style.visibility = 'visible';
+  document.getElementById("restartButton").blur();
+  // document.getElementById("cat1").style.visibility = 'visible';
 });
 
 function restart(catName) {

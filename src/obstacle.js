@@ -7,7 +7,7 @@ class Obstacle extends Component {
 
   static assets = [
     {
-      'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/ob1.png",
+      'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/obstacle1.png",
       'width' : 50,  //square size
       'height': 90,
       'xOffset': 70, 
@@ -24,6 +24,8 @@ class Obstacle extends Component {
       'displayRatio': 1.7
     }
   ]
+
+
 
   constructor(x, canvasHeight) {
     let random = Math.floor(Math.random() * Obstacle.assets.length);

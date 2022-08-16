@@ -62,7 +62,7 @@ class GameArea {
     // let arr = [400, 500, 600, 700];
     // let randomInterval = arr[Math.floor(Math.random() * arr.length)];
 
-    if ((this.frameNo === 1 || this.everyinterval(500)) && !this.cat.isGameOver) {
+    if ((this.frameNo === 1 || this.everyinterval(400)) && !this.cat.isGameOver) {
       let canvasWidth = this.canvas.width;
       let canvasHeight = this.canvas.height;
       this.obstacles.push(new Obstacle(canvasWidth, canvasHeight));
@@ -89,7 +89,6 @@ class GameArea {
     }
     
     this.score.render(this.canvasContext);
-
   }
 
   // 
