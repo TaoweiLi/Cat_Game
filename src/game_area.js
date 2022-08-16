@@ -1,14 +1,19 @@
 class GameArea {
-  constructor(gameCanvas) {
+  constructor(gameCanvas, catName) {
     this.canvas = gameCanvas
-    this.cat = new Cat("red", 10, 10, 20, this.canvas.height);
+    this.catName = catName;
+
+    this.cat = new Cat(this.catName, 55, 55, 80, this.canvas.height);
     this.obstacles = [];
-    this.score = new ScoreBar(10, 0, 220, 20);
+    this.score = new ScoreBar(100, 100, 100, 100);
+
   
     this.canvasContext = this.canvas.getContext("2d");
-    this.frameNo = 0;  //start with frme 
-    this.interval = setInterval(this.update.bind(this), 20); // (1000/20)=50 frames per second
 
+    this.frameNo = 0;  //start with frame 0
+
+    // only need set up once
+    this.interval = setInterval(this.update.bind(this), 5); // (1000/20)=50 frames per second
     document.addEventListener('keydown', (event) => {
       let code = event.code;
       if (code == "Space" && this.cat.hitBottom(this.canvas.height) && !this.cat.isGameOver) {
@@ -22,8 +27,20 @@ class GameArea {
     this.canvasContext.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
-  gameOver() {  //need to implement
+  restartGame(catName) {
+    this.catName = catName;
+    this.clear();
+    this.cat = new Cat(this.catName, 55, 55, 80, this.canvas.height);
+    this.obstacles = [];
+    this.score = new ScoreBar(100, 100, 600, 200);
 
+    this.canvasContext = this.canvas.getContext("2d");
+
+    this.frameNo = 0;  //start with frme
+  }
+
+  gameOver() {  //need to implement
+    this.restartGame();
   } 
 
   update() {
@@ -39,7 +56,7 @@ class GameArea {
     this.frameNo += 1;
 
     // add an obstacle at the first frame and then add an obstacle every 150 frames(3 sec)
-    if ((this.frameNo === 1 || this.everyinterval(150)) && !this.cat.isGameOver) {
+    if ((this.frameNo === 1 || this.everyinterval(400)) && !this.cat.isGameOver) {
       let canvasWidth = this.canvas.width;
       let canvasHeight = this.canvas.height;
       this.obstacles.push(new Obstacle(canvasWidth, canvasHeight));

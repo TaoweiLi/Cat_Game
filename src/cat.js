@@ -7,34 +7,62 @@ const cat3_die_path = "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final
 
 
 class Cat extends Component {
-  constructor(color, width, height, x, y) {
+
+  static assetsHash = {
+    'cat1': {
+      'cat_run_path': cat1_run_path,
+      'cat_die_path': cat1_die_path
+    },
+
+    'cat2': {
+      'cat_run_path': cat2_run_path,
+      'cat_die_path': cat2_die_path
+    },
+
+    'cat3': {
+      'cat_run_path': cat3_run_path,
+      'cat_die_path': cat3_die_path
+    }
+  }
+
+  constructor(name, width, height, x, y) {
     super(width, height, x, y);
     this.health = 3;
-    this.color = color;
+    this.name = name;
     this.speedX = 0;
     this.speedY = 0;  
-    this.gravity = 3;  //incremental rate
+    this.gravity = 4;  //incremental rate, cat's jump height
     this.gravitySpeed = 0; //current up/down speed
     // this.isJump = false;  //can use it to make double/triple jump!
     this.canvasHeight = y;
     this.isGameOver = false;
+    this.renderRatio = 5;
 
     // Load cat gif resources
+    let catAsset = Cat.assetsHash[String(name)]
+
+    // default cat
+    if (catAsset === null || catAsset === undefined){
+      catAsset = Cat.assetsHash['cat1']
+    }
+
     this.cat1_run_gif = GIF();
-    this.cat1_run_gif.load(cat1_run_path);
+    this.cat1_run_gif.load(catAsset["cat_run_path"]);
 
     this.cat1_die_gif = GIF();
-    this.cat1_die_gif.load(cat1_die_path);
+    this.cat1_die_gif.load(catAsset["cat_die_path"]);
 
     this.currentGif = this.cat1_run_gif;
   }
 
+
   render(canvasContext) {   //draw cat pic
     // canvasContext.fillStyle = this.color;
     // canvasContext.fillRect(this.x, this.y, this.width, this.height);
-    canvasContext.drawImage(this.currentGif.image, this.x - 15, this.y - 23);
+    let cImg = this.currentGif.image
+    canvasContext.drawImage(cImg, this.x - cImg.width*1.7, this.y - cImg.height*2.8, cImg.width * this.renderRatio, cImg.height * this.renderRatio);
     // canvasContext.drawImage(this.)
-    // canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
+    canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 
   meowSound() {
