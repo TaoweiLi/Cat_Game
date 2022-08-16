@@ -6,9 +6,9 @@ class ScoreBar extends Component {
 
   render(canvasContext) {
 
-    canvasContext.font = 'bold 50px arial';
-      // canvasContext.fillStyle = color;
-      let scoreText = "SCORE: " + this.score;
+    canvasContext.font = '30px arial';
+    canvasContext.fillStyle = '#1399D2';
+      let scoreText = "Score: " + this.score;
       canvasContext.fillText(scoreText, this.x, this.y);
 
   }

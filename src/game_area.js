@@ -5,7 +5,7 @@ class GameArea {
 
     this.cat = new Cat(this.catName, 55, 55, 80, this.canvas.height);
     this.obstacles = [];
-    this.score = new ScoreBar(100, 100, 100, 100);
+    this.score = new ScoreBar(100, 50, 1080, 60);
 
   
     this.canvasContext = this.canvas.getContext("2d");
@@ -13,10 +13,10 @@ class GameArea {
     this.frameNo = 0;  //start with frame 0
 
     // only need set up once
-    this.interval = setInterval(this.update.bind(this), 5); // (1000/20)=50 frames per second
+    this.interval = setInterval(this.update.bind(this), 5); // (1000/5)=200 frames per second
     document.addEventListener('keydown', (event) => {
       let code = event.code;
-      if (code == "Space" && this.cat.hitBottom(this.canvas.height) && !this.cat.isGameOver) {
+      if (code === "Space" && this.cat.hitBottom(this.canvas.height) && !this.cat.isGameOver) {
         this.cat.meowSound();
         this.cat.quickJump(600);   //600(0.6 sec) the time interval btw start jump and start fall
             }
@@ -28,15 +28,17 @@ class GameArea {
   }
 
   restartGame(catName) {
-    this.catName = catName;
+    if(catName !== null && catName !== undefined){
+      this.catName = catName;
+    }
     this.clear();
     this.cat = new Cat(this.catName, 55, 55, 80, this.canvas.height);
     this.obstacles = [];
-    this.score = new ScoreBar(100, 100, 600, 200);
+    this.score = new ScoreBar(100, 50, 1080, 60);
 
     this.canvasContext = this.canvas.getContext("2d");
 
-    this.frameNo = 0;  //start with frme
+    this.frameNo = 0;  //start with frame 0
   }
 
   gameOver() {  //need to implement
@@ -56,7 +58,11 @@ class GameArea {
     this.frameNo += 1;
 
     // add an obstacle at the first frame and then add an obstacle every 150 frames(3 sec)
-    if ((this.frameNo === 1 || this.everyinterval(400)) && !this.cat.isGameOver) {
+    
+    // let arr = [400, 500, 600, 700];
+    // let randomInterval = arr[Math.floor(Math.random() * arr.length)];
+
+    if ((this.frameNo === 1 || this.everyinterval(500)) && !this.cat.isGameOver) {
       let canvasWidth = this.canvas.width;
       let canvasHeight = this.canvas.height;
       this.obstacles.push(new Obstacle(canvasWidth, canvasHeight));

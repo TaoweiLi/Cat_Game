@@ -62,7 +62,7 @@ class Cat extends Component {
     let cImg = this.currentGif.image
     canvasContext.drawImage(cImg, this.x - cImg.width*1.7, this.y - cImg.height*2.8, cImg.width * this.renderRatio, cImg.height * this.renderRatio);
     // canvasContext.drawImage(this.)
-    canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
+    // canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 
   meowSound() {
@@ -101,7 +101,7 @@ class Cat extends Component {
   }
 
   newPosition(canvasHeight) {
-    this.gravitySpeed = this.gravity;  // 匀速上下
+    this.gravitySpeed = this.gravity;  // constant velocity
     this.x += this.speedX;
     this.y += this.speedY + this.gravitySpeed;
     this.hitBottom(canvasHeight);
@@ -117,9 +117,9 @@ class Cat extends Component {
     return false
   }
 
-  hitTop() {
+  // hitTop() {
 
-  }
+  // }
 
   gameOver() {
     if(!this.isGameOver){
