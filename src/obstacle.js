@@ -16,12 +16,12 @@ class Obstacle extends Component {
     }
 ,
     {
-      'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/book_shelf_1.png",
+      'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/avocade.png",
       'width': 100,
       'height': 70,
       'xOffset': 70,
-      'yOffset': 63,
-      'displayRatio': 2.6
+      'yOffset': 50 ,
+      'displayRatio': 1.0
     }
   ]
 
