@@ -54,11 +54,11 @@ class Obstacle extends Component {
 
   constructor(x, canvasHeight, startFrame) {
     let random = Math.floor(Math.random() * Obstacle.assets.length);
-    let randomAsset = Obstacle.assets[random]
+    let randomAsset = Obstacle.assets[random];
 
     super(randomAsset["width"], randomAsset["height"], x, canvasHeight - randomAsset["height"]);
 
-    this.asset = randomAsset
+    this.asset = randomAsset;
     this.image = new Image();
     this.image.src = this.asset["urlPath"]
     this.startFrame = startFrame;

@@ -1,4 +1,3 @@
-
 class CanvasButton extends Component {
   constructor(width, height, x, y, gameArea) {
     super(width, height, x, y);

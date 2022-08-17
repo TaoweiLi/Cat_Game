@@ -6,13 +6,10 @@ class GameArea {
     this.cat = new Cat(this.catName, 55, 55, 80, this.canvas.height);
     this.obstacles = [];
     this.score = new ScoreBar(100, 50, 1080, 60);
-    this.health = new HealthBar(100, 50, 10, 60);
-
+    this.health = new HealthBar(100, 50, 50, 60);
     this.canvasContext = this.canvas.getContext("2d");
-
     this.frameNo = 0;  //start with frame 0
     this.nextObstacleFrame = 1;
-
     this.isGameOver = false;
 
     // only need set up once
@@ -26,57 +23,46 @@ class GameArea {
     }, false);
 
     this.updateList();
-
-    // this.restartButton = new CanvasButton(100,100, 500,200, this);
-
-    // this.canvas.addEventListener('click', function (evt) {
-    //   let mousePos = this.getMousePos(this.canvas, evt);
-    //   if (this.restartButton.isInside(mousePos)) {
-    //     this.restartButton.onClick();
-    //   }
-    // }.bind(this), false);
   }
 
   // store the score to local storage;
 
-
   addScore(score) {
-    let stored = localStorage.getItem('scores')
-    let scores = []
-    if (stored !== undefined && stored !== null){
+    let stored = localStorage.getItem("scores");
+    let scores = [];
+    if (stored !== undefined && stored !== null) {
       scores = JSON.parse(stored);
     }
     scores.push(score);
-    scores = scores.slice(-5);
+    scores = scores.slice(-10).sort((a, b) => b - a);
     localStorage.setItem("scores", JSON.stringify(scores));
     this.updateList();
   }
 
   updateList() {
-    const scoreHistory = document.querySelector('.scoreHistory');
-    let stored = localStorage.getItem('scores')
-    let scores = []
+    const scoreHistory = document.querySelector(".scoreHistory");
+    let stored = localStorage.getItem("scores");
+    let scores = [];
     if (stored !== undefined && stored !== null) {
       scores = JSON.parse(stored);
     }
-    
+
     while (scoreHistory.hasChildNodes()) {
       scoreHistory.removeChild(scoreHistory.firstChild);
     }
 
     if (!scoreHistory.hasChildNodes()) {
       scores.map(item => {
-        let li = document.createElement('li');
+        let li = document.createElement("li");
         li.innerText = item;
         scoreHistory.appendChild(li);
       })
     } else {
-      let li = document.createElement('li');
+      let li = document.createElement("li");
       li.innerText = scores[scores.length - 1];
       scoreHistory.appendChild(li);
     }
   }
-
 
   // Can be static
   getMousePos(canvas, event) {
@@ -102,14 +88,13 @@ class GameArea {
     this.obstacles = [];
     this.score = new ScoreBar(100, 50, 1080, 60);
     this.health = new HealthBar(100, 50, 10, 60);
-
     this.canvasContext = this.canvas.getContext("2d");
     this.frameNo = 0;  //start with frame 0
     this.nextObstacleFrame = 1;
     this.isGameOver = false;
   }
 
-  gameOver() {  //need to implement
+  gameOver() {  
     // this.restartButton.enable();
     this.cat.gameOver();
     this.isGameOver = true;
@@ -132,19 +117,17 @@ class GameArea {
       }
     }
 
-
     this.clear();
     this.frameNo += 1;
 
     // add an obstacle at the first frame and then add an obstacle every 150 frames(3 sec)
 
-    const intervalArr = [400, 500, 600, 700];
+    const intervalArr = [300, 400, 600, 800];
 
     if (this.frameNo === this.nextObstacleFrame && !this.cat.isGameOver) {
       let canvasWidth = this.canvas.width;
       let canvasHeight = this.canvas.height;
       this.obstacles.push(new Obstacle(canvasWidth, canvasHeight, this.frameNo));
-
       let randomInterval = intervalArr[Math.floor(Math.random() * intervalArr.length)];
       this.nextObstacleFrame = this.frameNo + randomInterval
     }

@@ -12,12 +12,14 @@ class Cat extends Component {
     'cat1': {
       'cat_run_path': cat1_run_path,
       'cat_die_path': cat1_die_path
-    },
+    }
+    ,
 
     'cat2': {
       'cat_run_path': cat2_run_path,
       'cat_die_path': cat2_die_path
-    },
+    }
+    ,
 
     'cat3': {
       'cat_run_path': cat3_run_path,
@@ -27,12 +29,11 @@ class Cat extends Component {
 
   constructor(name, width, height, x, y) {
     super(width, height, x, y);
-    this.health = 3;
     this.name = name;
     this.speedX = 0;
     this.speedY = 0;  
     this.gravity = 4;  //incremental rate, cat's jump height
-    this.gravitySpeed = 0; //current up/down speed
+    this.gravitySpeed = 0;  //current up/down speed
     // this.isJump = false;  //can use it to make double/triple jump!
     this.canvasHeight = y;
     this.isGameOver = false;
@@ -55,12 +56,12 @@ class Cat extends Component {
     this.currentGif = this.cat1_run_gif;
   }
 
-
-  render(canvasContext) {   //draw cat pic
+ // draw cat pic
+  render(canvasContext) {
     // canvasContext.fillStyle = this.color;
     // canvasContext.fillRect(this.x, this.y, this.width, this.height);
-    let cImg = this.currentGif.image
-    if(cImg !== null) {
+    let cImg = this.currentGif.image;
+    if (cImg !== null) {
           canvasContext.drawImage(cImg, this.x - cImg.width*1.7, this.y - cImg.height*2.8, cImg.width * this.renderRatio, cImg.height * this.renderRatio);
     }
     // canvasContext.drawImage(this.)

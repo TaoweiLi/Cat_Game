@@ -1,16 +1,6 @@
 var canvasEl
 var gameArea
 var soundOn = true
-// var currentGif = cat1_run_gif;
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const canvasEl = document.getElementsByTagName("myCanvas")[0];
-//   canvasEl.width = GameArea.DIM_X;
-//   canvasEl.height = GameArea.DIM_Y;
-
-//   const ctx = canvasEl.getContext("2d");
-
-// });
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -35,7 +25,7 @@ function soundSwitch() {
   }
 }
 
-// cat options clicks
+// cat options buttons
 document.getElementById("cat1").addEventListener("click", () => { 
   catSwitch("cat1");
   document.getElementById("cat1").blur();
@@ -66,6 +56,7 @@ function restart(catName) {
   gameArea.restartGame(catName);
 }
 
+//canvas startButton
 document.getElementById("startButton").addEventListener("click", () => {
   restart();
   document.getElementById("startButton").blur();
