@@ -1,7 +1,7 @@
 class HealthBar extends Component {
   constructor(width, height, x, y) {
     super(width, height, x, y);
-    this.hp = 2;
+    this.hp = 1;
   }
 
   render(canvasContext) {
