@@ -50,26 +50,9 @@ class Obstacle extends Component {
       'yOffset': 33,
       'displayRatio': 1.4
     }
-    ,
-    {
-      'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cherry.png",
-      'width': 70,  //square size
-      'height': 100,
-      'xOffset': 45,
-      'yOffset': 70,
-      'displayRatio': 1.5 //obstacles size
-    }
-    , {
-      'urlPath': "https://raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/cherry.png",
-      'width': 70,  //square size
-      'height': 100,
-      'xOffset': 45,
-      'yOffset': 70,
-      'displayRatio': 1.5 //obstacles size
-    }
   ] 
 
-  constructor(x, canvasHeight) {
+  constructor(x, canvasHeight, startFrame) {
     let random = Math.floor(Math.random() * Obstacle.assets.length);
     let randomAsset = Obstacle.assets[random]
 
@@ -78,6 +61,7 @@ class Obstacle extends Component {
     this.asset = randomAsset
     this.image = new Image();
     this.image.src = this.asset["urlPath"]
+    this.startFrame = startFrame;
   }
 
   // draw a new obstacle

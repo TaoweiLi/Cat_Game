@@ -19,36 +19,39 @@
 
   <div id="game">
     <canvas id="myCanvas" width=1280px height= 720px ></canvas>
+  <button id="startButton" style="visibility: hidden;" >Game Over<br><br>Click to Restart</button>
 
+  
     <div class="buttons">
       <button id="soundButton">SoundButton</button>
       <button id="cat1"><img id="cat1Button" src="../asset/cat1_button.png" alt="Cat 1" width="150" height="150"></button>
       <button id="cat2"><img id="cat1Button" src="../asset/cat2_button.png" alt="Cat 2" width="160" height="160"></button>
       <button id="cat3"><img id="cat1Button" src="../asset/cat3_button.png" alt="Cat 3" width="150" height="150"></button>
       <button id="restartButton">Restart Game</button> 
+      
     </div>
   </div>
 
-  <!-- <div id="start" style"="display:block">
-      <a href="#" onclick="startGame()">Start Game</a>
-  </div>
- 
-  <div id="game-over" style"="display:none">
-    <h1>Game Over</h1>
-      <a href="#" onclick="gameOver()">Game Over</a>
-  </div> -->
+    <div class="score-container">
+      <h2>Score History:</h2>
+    
+      <ul class="scoreHistory"></ul>
+    </div>
+
+    
 
 </body>
 
 <footer>
-  <!-- <script src="main.js" h></script> -->
   <script src="../src/gif.js"></script>
   <script src="../src/component.js"></script>
+  <script src="../src/canvas_button.js"></script>
   <script src="../src/cat.js"></script>
   <script src="../src/obstacle.js"></script>
   <script src="../src/game_area.js"></script>
   <script src="../src/index.js"></script>
   <script src="../src/score_bar.js"></script>
+  <script src="../src/health_bar.js"></script>
 </footer>
 
 </html>

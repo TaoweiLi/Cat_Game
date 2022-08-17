@@ -59,32 +59,14 @@ function catSwitch(catName) {
 //restart button
 document.getElementById("restartButton").addEventListener("click", () => {
   restart();
-  // document.getElementById("cat1").blur();
   document.getElementById("restartButton").blur();
-  // document.getElementById("cat1").style.visibility = 'visible';
 });
 
 function restart(catName) {
   gameArea.restartGame(catName);
 }
 
-// function startGame() {
-//   let startDiv = document.getElementById("start");
-//   let gameCanvas = document.getElementById("myCanvas");
-//   let gameOver = document.getElementById("game-over");
-
-//   startDiv.style.display = "none";
-//   gameCanvas.style.display = "block";
-//   gameOver.style.display = "none";
-//   gameArea.restartGame(catName);
-// }
-// function gameOver() {
-//   let startDiv = document.getElementById("start");
-//   let gameCanvas = document.getElementById("myCanvas");
-//   let gameOver = document.getElementById("game-over");
-
-//   startDiv.style.display = "none";
-//   gameCanvas.style.display = "none";
-//   gameOver.style.display = "block";
-//   gameArea.restartGame(catName);
-// }
+document.getElementById("startButton").addEventListener("click", () => {
+  restart();
+  document.getElementById("startButton").blur();
+});
