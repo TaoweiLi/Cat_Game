@@ -34,7 +34,7 @@ class GameArea {
       scores = JSON.parse(stored);
     }
     scores.push(score);
-    scores = scores.sort((a, b) => b - a).slice(-10);
+    scores = scores.sort((a, b) => b - a).slice(0, 10);
     localStorage.setItem("scores", JSON.stringify(scores));
     this.updateList();
   }
