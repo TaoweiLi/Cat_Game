@@ -8,6 +8,7 @@
 body {
   width: 100vw;
   height: 100vh;
+  background-color:rgb(216, 237, 251);
 
 }
 
@@ -58,7 +59,8 @@ body {
 }
 
 #soundButton {
-  background-color: rgba(253, 232, 39, 0.898);
+  background-color: rgba(253, 232, 39, 0.741);
+  order: rgba(253, 232, 39, 0.741);
   border-radius: 15px;
   border: none;
   color: (9, 159, 193);
@@ -83,12 +85,12 @@ button {
   display: block;
   border-radius: 15px;
   transition-duration: 0.3s;
-  background: rgba(253, 232, 39, 0.898);
-  border: rgba(253, 232, 39, 0.898);
+  background: rgba(252, 236, 96, 0.741);
+  border: rgba(253, 232, 39, 0.741);
   font-weight: bold;
   width: 100px;
   height: 50px;
-  color: rgb(69, 202, 238);
+  color: rgb(7, 172, 249);
   outline: none;
   font-size: 18px;
   font-family: Comic Sans MS, Comic Sans;

@@ -91,7 +91,7 @@ class Cat extends Component {
 
   jump() {
     if (this.hitBottom(this.canvasHeight)) {
-      this.gravity = -1 * this.gravity;  //reversed gravity make jump
+      this.gravity = -1 * this.gravity;  //negative gravity make jump
       // this.isJump = true;
     }
   }

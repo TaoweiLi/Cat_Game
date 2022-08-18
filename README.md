@@ -28,9 +28,11 @@ Cat game is a jumping game for a single player to make a cat jump. There will be
 ## **Technologies, Libraries, APIs**
 
 ​​This project will be implemented with the following technologies:
-- The Canvas library
+- Canvas library
 - JavaScript
-- Gif
+- HTML
+- CSS
+- GIF
 
 ## **Implementation Timeline**
 
