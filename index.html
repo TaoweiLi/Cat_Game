@@ -6,37 +6,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./dist/styles.css">
+  <link rel="icon" href="./asset/favicon.png">
   <title>Cat Game</title>
+
 </head>
 
 <body>
 
 
+  <div class="cat_jump">
+    <img src="./asset/cat_jump.png" alt="Cat Jump" width="500" height="140">
+  </div>
   <div class="abc">
-    <h1 class="cat_jump">Cat Jump</h1>
 
-    <div id="gameInstrction">
-      <p>Cat Jump: is a jumping game for a single player. Press Space to start the
+
+    <!-- <h1 class="cat_jump">Cat Jump</h1> -->
+
+    <div id="gameInstruction">
+      <p>Cat Jump is a jumping game for a single player. Press Space to start the
         game and jump your Cat.</p>
     </div>
 
-    <button id="startButton" style="visibility: hidden;">Game Over!<br><br>Click to Restart</button>
+    <button id="startButton" style="visibility: hidden; z-index: 100;">Game Over!<br><br>Click to Restart</button>
 
   </div>
 
 
   <div id="game">
     <div class="score-container">
-      <h2 id="scoreTitle">10 Highest Scores of the Day:</h2>
-
+      <h2 id="scoreTitle">Top 10 Scores:</h2>
       <ul class="scoreHistory"></ul>
     </div>
 
-    <canvas id="myCanvas" width=1280px height=720px>
+    <canvas id="myCanvas" width=1280px height=720px></canvas>
 
-    </canvas>
-
-    <div class="buttons">
+    <div class="buttons" id="cat_selection">
       <button id="soundButton">SoundButton</button>
       <button id="cat1"><img id="cat1Button" src="./asset/cat1_button.png" alt="Cat 1" width="150"
           height="150"></button>
@@ -46,9 +50,7 @@
           height="150"></button>
       <button id="restartButton">Restart Game</button>
       <div class="icon">
-        <a href="https://github.com/TaoweiLi/Cat_Game"><img src="./asset/github.png" width="40" height="40"
-            alt=""></a>
-      
+        <a href="https://github.com/TaoweiLi/Cat_Game"><img src="./asset/github.png" width="40" height="40" alt=""></a>
       </div>
     </div>
 

@@ -126,7 +126,7 @@ class Cat extends Component {
 
   gameOver() {
     if(!this.isGameOver){
-      this.hitSound();
+      // this.hitSound();
       this.currentGif = this.cat1_die_gif;
       this.isGameOver = true;
     }

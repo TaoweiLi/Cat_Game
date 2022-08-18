@@ -110,6 +110,7 @@ class GameArea {
     for (let i = 0; i < this.obstacles.length && !this.isGameOver; i += 1) {
       if (this.cat.isHit(this.obstacles[i])) {
         this.health.hp -= 1;
+        this.cat.hitSound();
         if (this.health.hp > 0) {
           this.obstacles.shift();
         }
@@ -124,18 +125,20 @@ class GameArea {
 
     const intervalArr = [300, 400, 600, 800];
 
-    if (this.frameNo === this.nextObstacleFrame && !this.cat.isGameOver) {
+    let obsScale = 1 + this.score.score / 500
+
+    if (this.frameNo >= this.nextObstacleFrame && !this.cat.isGameOver) {
       let canvasWidth = this.canvas.width;
       let canvasHeight = this.canvas.height;
       this.obstacles.push(new Obstacle(canvasWidth, canvasHeight, this.frameNo));
-      let randomInterval = intervalArr[Math.floor(Math.random() * intervalArr.length)];
+      let randomInterval = intervalArr[Math.floor(Math.random() * intervalArr.length)] / obsScale;
       this.nextObstacleFrame = this.frameNo + randomInterval
     }
 
     // move obstacles if the game is not over
     for (let i = 0; i < this.obstacles.length; i += 1) {
       if (!this.cat.isGameOver) {
-        this.obstacles[i].x += -1; // move to left with 1 px.
+        this.obstacles[i].x += -1 * obsScale; // move to left with 1 px.
       }
 
       this.obstacles[i].render(this.canvasContext); // draw a updated obstacle on the canvas.
