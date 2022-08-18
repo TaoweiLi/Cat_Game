@@ -13,7 +13,7 @@ body {
 
 #myCanvas {
   border: rgba(160, 102, 20, 0.437) solid;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
   background-image: url("../asset/back4.png");
   background-size: 80% 120%;
   /* -webkit-background-image: url("https: //raw.githubusercontent.com/TaoweiLi/Cat_Game_Final_Proposal/main/asset/back1.png"); */
@@ -112,19 +112,20 @@ button:hover {
 }
 
 #startButton {
+  display: inline-block;
+  cursor: pointer;
   font-size: 25px;
   font-family: Comic Sans MS, Comic Sans;
   color: rgb(7, 172, 249);
   padding: 25px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 48%;
   margin-top: -80px;
   margin-left: -100px;
-  height: 20%;
-  width: 15%;
+  height: 200px;
+  width: 300px;
   text-align: center;
-  display: flex;
   justify-content: center;
 }
 
@@ -134,24 +135,29 @@ button:hover {
   margin-left: 50px;
 }
 
-h2 {
-  font-size: 18px;
+#scoreTitle {
+  font-size: 20px;
   font-family: Comic Sans MS, Comic Sans;
   font-weight: bold;
   color: rgb(5, 163, 236);
   text-decoration: underline;
 }
 
-ul {
+.scoreHistory {
   color: rgb(7, 160, 231);
   list-style: none;
-  font-size: 16px;
+  font-size: 17px;
   font-family: Comic Sans MS, Comic Sans;
 }
 
 .abc {
   flex-direction: row;
   align-items: center;
+}
+
+.icon{
+ margin-left: 60px;
+ margin-top: 50px;
 }
 /* 
 #abc {

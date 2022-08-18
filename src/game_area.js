@@ -34,7 +34,7 @@ class GameArea {
       scores = JSON.parse(stored);
     }
     scores.push(score);
-    scores = scores.slice(-10).sort((a, b) => b - a);
+    scores = scores.sort((a, b) => b - a).slice(0, 10);
     localStorage.setItem("scores", JSON.stringify(scores));
     this.updateList();
   }
@@ -87,7 +87,7 @@ class GameArea {
     this.cat = new Cat(this.catName, 55, 55, 80, this.canvas.height);
     this.obstacles = [];
     this.score = new ScoreBar(100, 50, 1080, 60);
-    this.health = new HealthBar(100, 50, 10, 60);
+    this.health = new HealthBar(100, 50, 50, 60);
     this.canvasContext = this.canvas.getContext("2d");
     this.frameNo = 0;  //start with frame 0
     this.nextObstacleFrame = 1;
