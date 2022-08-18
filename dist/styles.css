@@ -132,7 +132,7 @@ button:hover {
 
 .score-container {
   text-align: center;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 #scoreTitle {
@@ -155,10 +155,11 @@ button:hover {
   align-items: center;
 }
 
-.icon{
- margin-left: 60px;
- margin-top: 50px;
+.icon {
+  margin-left: 60px;
+  margin-top: 50px;
 }
+
 /* 
 #abc {
   margin-left: auto;
