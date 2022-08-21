@@ -21,7 +21,7 @@ Cat game is a jumping game for a single player to make a cat jump. There will be
 - A game instruction to explain the rules and how to play the game.
 - A production README
 
-## **Wireframes**
+## **Gameplay**
 ![wireframe](./wireframe.png)
 
 
