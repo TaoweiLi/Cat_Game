@@ -22,7 +22,7 @@ No installation needed. Please open this link (https://taoweili.github.io/Cat_Ga
 
 ## **Technologies, Libraries, APIs**
 
-​​This project will be implemented with the following technologies:
+​​This project was implemented with the following technologies:
 - Canvas library
 - JavaScript
 - HTML
