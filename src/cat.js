@@ -69,14 +69,14 @@ class Cat extends Component {
   }
 
   meowSound() {
-    let audio = new Audio('http://soundbible.com/grab.php?id=1286&type=mp3');
+    let audio = new Audio("https://github.com/TaoweiLi/Cat_Game/raw/main/asset/meow_sound.mp3");
     if (soundOn) {
       audio.play();
     }
   }
 
   hitSound() {
-    let audio = new Audio('http://soundbible.com/grab.php?id=995&type=mp3');
+    let audio = new Audio("https://github.com/TaoweiLi/Cat_Game/raw/main/asset/hit_sound.mp3");
      if (soundOn) {
       audio.play();
     }
