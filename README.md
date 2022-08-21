@@ -6,7 +6,7 @@
 
 ## **Description**
 
-Cat game is a jumping game for a single player to make a cat jump. There will be different cats that can be chosen to play with. Players can use the keyboard to make the cat jump and avoid obstacles to achieve a higher score. Each time the cat hits the obstacles it will reduce 1 health point. Game will end if the health point is equal to 0.
+Cat game is a jumping game for a single player to make a cat jump. There will be different cats that can be chosen to play with. Players can press Space to make the cat jump and avoid obstacles to achieve a higher score. Each time the cat hits the obstacles it will reduce 1 health point. Game will end if the health point is equal to 0.
 
 ## **Usage**
 No installation needed. Please open this link (https://taoweili.github.io/Cat_Game/) to play the game online.
