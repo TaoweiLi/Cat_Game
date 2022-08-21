@@ -22,7 +22,7 @@ Cat game is a jumping game for a single player to make a cat jump. There will be
 - A production README
 
 ## **Gameplay**
-![wireframe](./wireframe.png)
+<img src="https://github.com/TaoweiLi/Cat_Game/raw/main/asset/gameplay.gif" width="500" height="300">
 
 
 ## **Technologies, Libraries, APIs**
