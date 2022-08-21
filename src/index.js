@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 // sound  control
 document.getElementById("soundButton").innerText = "Sound On";
 document.getElementById("soundButton").addEventListener("click", soundSwitch);
@@ -29,17 +28,14 @@ function soundSwitch() {
 document.getElementById("cat1").addEventListener("click", () => { 
   catSwitch("cat1");
   document.getElementById("cat1").blur();
-  // document.getElementById("cat1").style.visibility = 'hidden';
 });
 document.getElementById("cat2").addEventListener("click", () => { 
   catSwitch("cat2");
   document.getElementById("cat2").blur();
-  // document.getElementById("cat2").style.visibility = 'hidden';
 });
 document.getElementById("cat3").addEventListener("click", () => { 
   catSwitch("cat3");
   document.getElementById("cat3").blur();
-  // document.getElementById("cat3").style.visibility = 'hidden';
 });
 
 function catSwitch(catName) {

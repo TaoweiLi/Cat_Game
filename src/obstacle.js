@@ -66,8 +66,6 @@ class Obstacle extends Component {
 
   // draw a new obstacle
   render(canvasContext) {
-    // canvasContext.fillStyle = this.color;
-    // canvasContext.fillRect(this.x, this.y, this.width, this.height);
     canvasContext.drawImage(this.image, this.x - this.asset["xOffset"], this.y - this.asset["yOffset"], this.image.width * this.asset["displayRatio"], this.image.height * this.asset["displayRatio"]);
     // canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }

@@ -8,7 +8,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color:rgb(216, 237, 251);
+  background-color: rgb(216, 237, 251);
 
 }
 
@@ -17,7 +17,6 @@ body {
   position: absolute;
   top: 25%;
   left: 13%;
-  /* margin-left: 5%; */
 }
 
 #myCanvas {
@@ -26,7 +25,6 @@ body {
   background-size: 80% 120%;
   width: 50%;
   position: absolute;
-  /* margin:  auto auto auto; */
   top: 25%;
   left: 26%;
 }
@@ -43,24 +41,14 @@ body {
 }
 
 #gameInstruction {
-    text-align: center;
-      font-size: 18px;
-      color: rgba(124, 78, 15, 0.976);
-      font-family: Comic Sans MS,
-        Comic Sans;
-      /* margin-top: 100px; */
-      /* background-color:lightgrey; */
-  /* text-align: center;
+  text-align: center;
   font-size: 18px;
   color: rgba(124, 78, 15, 0.976);
   font-family: Comic Sans MS, Comic Sans;
-  margin-top: 40px; */
-  /* background-color:lightgrey; */
 }
 
 #soundButton {
-  background-color: rgba(253, 232, 39, 0.741);
-  order: rgba(253, 232, 39, 0.741);
+  border: rgba(253, 232, 39, 0.741);
   border-radius: 15px;
   border: none;
   color: (9, 159, 193);
@@ -172,31 +160,3 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
 }
-
-/* #start, #game-over {
-  font-family: Arial, Helvetica, sans-serif;
-  color:rgb(7, 172, 249);
-  padding: 20px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -100px;
-  height: 200px;
-  width: 250px;
-  text-align: center;
-}
-
-#start a, #game-over a {
-  border: 3px;
-  color: #1e1c1c;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 15px;
-  cursor: pointer;
-  display: block;
-  width: 200px;
-  text-align: center;
-  font-size: 2em;
-  display: inline-block;
-} */

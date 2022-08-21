@@ -33,8 +33,7 @@ class Cat extends Component {
     this.speedX = 0;
     this.speedY = 0;  
     this.gravity = 4;  //incremental rate, cat's jump height
-    this.gravitySpeed = 0;  //current up/down speed
-    // this.isJump = false;  //can use it to make double/triple jump!
+    this.gravitySpeed = 0;  //current up&down speed
     this.canvasHeight = y;
     this.isGameOver = false;
     this.renderRatio = 5;
@@ -56,15 +55,12 @@ class Cat extends Component {
     this.currentGif = this.cat1_run_gif;
   }
 
- // draw cat pic
+  // draw cat pic
   render(canvasContext) {
-    // canvasContext.fillStyle = this.color;
-    // canvasContext.fillRect(this.x, this.y, this.width, this.height);
     let cImg = this.currentGif.image;
     if (cImg !== null) {
           canvasContext.drawImage(cImg, this.x - cImg.width*1.7, this.y - cImg.height*2.8, cImg.width * this.renderRatio, cImg.height * this.renderRatio);
     }
-    // canvasContext.drawImage(this.)
     // canvasContext.strokeRect(this.x, this.y, this.width, this.height); // for debug
   }
 
@@ -92,14 +88,12 @@ class Cat extends Component {
   jump() {
     if (this.hitBottom(this.canvasHeight)) {
       this.gravity = -1 * this.gravity;  //negative gravity make jump
-      // this.isJump = true;
     }
   }
 
   fall() {
     if (!this.hitBottom(this.canvasHeight)) {
       this.gravity = Math.abs(this.gravity);  //positive gravity make fall
-      // this.isJump = false;
     }
   }
 
@@ -120,13 +114,8 @@ class Cat extends Component {
     return false
   }
 
-  // hitTop() {
-
-  // }
-
   gameOver() {
     if(!this.isGameOver){
-      // this.hitSound();
       this.currentGif = this.cat1_die_gif;
       this.isGameOver = true;
     }

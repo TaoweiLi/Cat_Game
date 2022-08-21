@@ -1,3 +1,8 @@
+/******************************************************************************************/
+/* Loading and playing GIF image to canvas.
+/* Source: https://stackoverflow.com/questions/48234696/how-to-put-a-gif-with-canvas
+/******************************************************************************************/
+
 const GIF = function () {
   // **NOT** for commercial use.
   var timerID;                          // timer handle for set time out usage

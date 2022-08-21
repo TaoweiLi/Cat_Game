@@ -25,8 +25,7 @@ class GameArea {
     this.updateList();
   }
 
-  // store the score to local storage;
-
+  // store the score to local storage
   addScore(score) {
     let stored = localStorage.getItem("scores");
     let scores = [];
@@ -64,7 +63,7 @@ class GameArea {
     }
   }
 
-  // Can be static
+  // can be static
   getMousePos(canvas, event) {
     var rect = canvas.getBoundingClientRect();
     return {
@@ -79,7 +78,6 @@ class GameArea {
 
   restartGame(catName) {
     document.getElementById("startButton").style.visibility = 'hidden';
-    // this.restartButton.disable();
     if (catName !== null && catName !== undefined) {
       this.catName = catName;
     }
@@ -95,7 +93,6 @@ class GameArea {
   }
 
   gameOver() {
-    // this.restartButton.enable();
     this.cat.gameOver();
     this.isGameOver = true;
     document.getElementById("startButton").style.visibility = 'visible';
@@ -121,8 +118,7 @@ class GameArea {
     this.clear();
     this.frameNo += 1;
 
-    // add an obstacle at the first frame and then add an obstacle every 150 frames(3 sec)
-
+    // random interval
     const intervalArr = [300, 400, 600, 800];
 
     let obsScale = 1 + this.score.score / 500
@@ -149,17 +145,15 @@ class GameArea {
 
     this.cat.newPosition(this.canvas.height);
     this.cat.render(this.canvasContext);
-    // myBox.update();
 
     if (this.everyinterval(10) && !this.cat.isGameOver) {
       this.score.increseScroe(1);
     }
-    // this.restartButton.render(this.canvasContext);
+
     this.score.render(this.canvasContext);
     this.health.render(this.canvasContext);
   }
 
-  // 
   everyinterval(n) {
     return this.frameNo % n === 0;
   }
