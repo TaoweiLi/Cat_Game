@@ -94,7 +94,7 @@ class GameArea {
     this.isGameOver = false;
   }
 
-  gameOver() {  
+  gameOver() {
     // this.restartButton.enable();
     this.cat.gameOver();
     this.isGameOver = true;
