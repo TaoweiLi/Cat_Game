@@ -1,6 +1,6 @@
 var canvasEl
 var gameArea
-var soundOn = true
+var soundOn = false
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // sound  control
-document.getElementById("soundButton").innerText = "Sound On";
+document.getElementById("soundButton").innerText = "Sound Off";
 document.getElementById("soundButton").addEventListener("click", soundSwitch);
 function soundSwitch() {
   if (soundOn) {
