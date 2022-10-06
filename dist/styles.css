@@ -2,6 +2,8 @@
   margin: 200;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito",
+    sans-serif;
 }
 
 
@@ -44,7 +46,7 @@ body {
   text-align: center;
   font-size: 18px;
   color: rgba(124, 78, 15, 0.976);
-  font-family: Comic Sans MS, Comic Sans;
+  /* font-family: Comic Sans MS, Comic Sans; */
 }
 
 #soundButton {
@@ -57,7 +59,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  font-family: Comic Sans MS, Comic Sans;
+  /* font-family: Comic Sans MS, Comic Sans; */
   margin: 3px 30px;
   cursor: pointer;
 
@@ -81,7 +83,7 @@ button {
   color: rgb(7, 172, 249);
   outline: none;
   font-size: 18px;
-  font-family: Comic Sans MS, Comic Sans;
+  /* font-family: Comic Sans MS, Comic Sans; */
   border: none;
   cursor: pointer;
   margin: 30px;
@@ -116,7 +118,7 @@ button:hover {
 #startButton {
   cursor: pointer;
   font-size: 25px;
-  font-family: Comic Sans MS, Comic Sans;
+  /* font-family: Comic Sans MS, Comic Sans; */
   color: rgb(7, 172, 249);
   padding: 25px;
   height: 200px;
@@ -132,7 +134,7 @@ button:hover {
 
 #scoreTitle {
   font-size: 20px;
-  font-family: Comic Sans MS, Comic Sans;
+  /* font-family: Comic Sans MS, Comic Sans; */
   font-weight: bold;
   color: rgb(5, 163, 236);
   text-decoration: underline;
@@ -142,7 +144,7 @@ button:hover {
   color: rgb(7, 160, 231);
   list-style: none;
   font-size: 20px;
-  font-family: Comic Sans MS, Comic Sans;
+  /* font-family: Comic Sans MS, Comic Sans; */
 }
 
 .abc {

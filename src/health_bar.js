@@ -5,7 +5,7 @@ class HealthBar extends Component {
   }
 
   render(canvasContext) {
-    canvasContext.font = '30px Comic Sans MS, Comic Sans';
+    canvasContext.font = '30px "Nunito", sans-serif';
     canvasContext.fillStyle = '#1399D2';
     let scoreText = "HP: " + this.hp;
     canvasContext.fillText(scoreText, this.x, this.y);
