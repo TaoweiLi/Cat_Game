@@ -119,7 +119,7 @@ class GameArea {
     this.frameNo += 1;
 
     // random interval
-    const intervalArr = [300, 400, 600, 800];
+    const intervalArr = [500, 600, 800];
 
     let obsScale = 1 + this.score.score / 500
 
