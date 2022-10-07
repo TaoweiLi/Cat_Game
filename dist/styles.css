@@ -19,10 +19,15 @@ body {
   position: absolute;
   top: 25%;
   left: 13%;
+  border:solid rgba(124, 78, 15, 0.976);
+}
+#scoreTitle {
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 #myCanvas {
-  border: rgba(160, 102, 20, 0.437) solid;
+  border:rgba(124, 78, 15, 0.976) solid;
   background-image: url("../asset/back4.png");
   background-size: 80% 120%;
   width: 50%;
