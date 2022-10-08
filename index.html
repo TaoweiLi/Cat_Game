@@ -7,52 +7,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./dist/styles.css">
   <link rel="icon" href="./asset/favicon.png">
-  <title>Cat Game</title>
-
 </head>
 
 <body>
+  <div id="wrapper">
+    <div id="base-app">
 
-  <div class="cat_jump">
-    <img src="./asset/cat_jump.png" alt="Cat Jump" width="500" height="140">
-  </div>
-  <div class="abc">
-    <div id="gameInstruction">
-      <p>Cat Jump is a jumping game for a single player making a cat jump over obstacles to reach a higher score. 
-        <br>
-        Choose one of your favorite cat and press Space to
-      jump your Cat.</p>
-    </div>
+      <header id="header-wrapper">
+        <div id="cat-jump-img">
+          <img src="./asset/cat_jump.png" alt="Cat Jump" width="500" height="140">
+        </div>
 
-    <button id="startButton" style="visibility: hidden; z-index: 100;">Game Over!<br><br>Click to Restart</button>
-  </div>
+        <div id="game-instruction">
+          <p>Cat Jump is a jumping game for a single player making a cat jump over obstacles to reach a higher score.
+            <br>
+            Choose one of your favorite cat and press Space to
+            jump your Cat.
+          </p>
+        </div>
+      </header>
 
+      <div id="mian-wrapper">
+        <div id="main-container">
 
-  <div id="game">
-    <div class="score-container">
-      <h2 id="scoreTitle">Top 10 Scores:</h2>
-      <ul class="scoreHistory"></ul>
-    </div>
+          <div id="score-container">
+            <h2 id="score-title">Your top ten scores:</h2>
+            <ul id="score-list"></ul>
+          </div>
 
-    <canvas id="myCanvas" width=1280px height=720px></canvas>
+          <!-- <div id="game-area-wrapper"> -->
 
-    <div class="buttons" id="cat_selection">
-      <button id="soundButton">SoundButton</button>
-      <button id="cat1"><img id="cat1Button" src="./asset/cat1_button.png" alt="Cat 1" width="150"
-          height="150"></button>
-      <button id="cat2"><img id="cat1Button" src="./asset/cat2_button.png" alt="Cat 2" width="160"
-          height="160"></button>
-      <button id="cat3"><img id="cat1Button" src="./asset/cat3_button.png" alt="Cat 3" width="150"
-          height="150"></button>
-      <button id="restartButton">Restart Game</button>
-      <div class="icon">
-        <a href="https://github.com/TaoweiLi/Cat_Game"><img src="./asset/github.png" width="40" height="40" alt=""></a>
+          <div id="canvas-wrapper">
+            <div id="canvas-container">
+              <canvas id="myCanvas" width="1280" height="720"></canvas>
+            </div>
+          </div>
+          <!-- </div> -->
+
+          <div id="right-container">
+            <div id="button-container">
+              <button class="left-button" id="soundButton">SoundButton</button>
+              <!-- <button class="left-button" id="cat1">
+                <img class="cat-img" src="./asset/cat1_button.png">
+              </button> -->
+              <input class="left-button" id="cat1" type="image" src="./asset/cat1_button.png" />
+              <input class="left-button" id="cat2" type="image" src="./asset/cat2_button.png" />
+              <input class="left-button" id="cat3" type="image" src="./asset/cat3_button.png" />
+              <!-- <button class="left-button" id="cat2">
+                <img class="cat-img" src="./asset/cat2_button.png">
+              </button> -->
+              <!-- <button class="left-button" id="cat3">
+                <img class="cat-img" src="./asset/cat3_button.png">
+              </button> -->
+              <button class="left-button" id="restartButton">Restart Game</button>
+            </div>
+
+            <div id="icons-container">
+              <a href="https://github.com/TaoweiLi/Cat_Game">
+                <img src="./asset/github-icon.png" width="40" height="35" alt="">
+              </a>
+              <!-- <a href="https://www.linkedin.com/in/taoweili">
+                <img src="./asset/linkedin-icon.png" width="35" height="35" alt="">
+              </a> -->
+            </div>
+          </div>
+
+        </div>
+
+        <div id="restart-button">
+          <button id="startButton" style="visibility: hidden; z-index: 100;">Game Over!<br><br>Click to
+            Restart</button>
+        </div>
+        
       </div>
     </div>
-
-
   </div>
-
 </body>
 
 <footer>

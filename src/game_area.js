@@ -39,7 +39,7 @@ class GameArea {
   }
 
   updateList() {
-    const scoreHistory = document.querySelector(".scoreHistory");
+    const scoreHistory = document.getElementById("score-list");
     let stored = localStorage.getItem("scores");
     let scores = [];
     if (stored !== undefined && stored !== null) {
