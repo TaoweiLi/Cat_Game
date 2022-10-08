@@ -2,12 +2,10 @@ var canvasEl
 var gameArea
 var soundOn = false
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  canvasEl = document.getElementsByTagName("canvas")[0];
+  canvasEl = document.getElementById("myCanvas") // .getElementsByTagName("canvas")[0];
   gameArea = new GameArea(canvasEl, "cat1")
 });
-
 
 // sound  control
 document.getElementById("soundButton").innerText = "Sound Off";
