@@ -22,6 +22,58 @@ No installation needed. Please open this link (https://taoweili.github.io/Cat_Ga
 
 <img src="https://github.com/TaoweiLi/Cat_Game/raw/main/asset/feature-record.gif" width="500" height="300">
 
+```
+ constructor(name, width, height, x, y) {
+    super(width, height, x, y);
+    this.name = name;
+    this.speedX = 0;
+    this.speedY = 0;  
+    this.gravity = 4;  //incremental rate, cat's jump height
+    this.gravitySpeed = 0;  //current up&down speed
+    this.canvasHeight = y;
+    this.isGameOver = false;
+    this.renderRatio = 5;
+
+  // draw cat pic
+  render(canvasContext) {
+    let cImg = this.currentGif.image;
+    if (cImg !== null) {
+          canvasContext.drawImage(cImg, this.x - cImg.width*1.7, this.y - cImg.height*2.8, cImg.width * this.renderRatio, cImg.height * this.renderRatio);
+    }
+  }
+  
+  // negative gravity make jump
+  jump() {
+    if (this.hitBottom(this.canvasHeight)) {
+      this.gravity = -1 * this.gravity;
+    }
+  }
+
+  // positive gravity make fall
+  fall() {
+    if (!this.hitBottom(this.canvasHeight)) {
+      this.gravity = Math.abs(this.gravity);
+    }
+  }
+
+  newPosition(canvasHeight) {
+    this.gravitySpeed = this.gravity;  // constant velocity
+    this.x += this.speedX;
+    this.y += this.speedY + this.gravitySpeed;
+    this.hitBottom(canvasHeight);
+  }
+  
+  hitBottom(canvasHeight) {
+    let catBottom = this.y + this.height;
+    if (catBottom >= canvasHeight) {
+      this.y = canvasHeight - this.height;;
+      this.gravitySpeed = 0;
+      return true
+    }
+    return false
+  }
+```
+
 ## **Technologies, Libraries, APIs**
 
 ​​This project was implemented with the following technologies:

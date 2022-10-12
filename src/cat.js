@@ -78,7 +78,7 @@ class Cat extends Component {
     }
   }
   
-  quickJump(interval) {  //only aloowed jump once at a time.
+  quickJump(interval) {  //only allowed jump once at a time.
     if (this.hitBottom(this.canvasHeight)) {
       this.jump()
       setTimeout(this.fall.bind(this), interval);
