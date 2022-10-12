@@ -2,7 +2,7 @@
 
 
 ## **Gameplay**
-<img src="" width="500" height="300">
+<img src="https://github.com/TaoweiLi/Cat_Game/raw/main/asset/game-play-record.gif" width="500" height="300">
 
 ## **Description**
 
@@ -19,7 +19,7 @@ No installation needed. Please open this link (https://taoweili.github.io/Cat_Ga
 - Three cat options can be chosen to play with.
 - Restart game anytime by clicking the restart buttton.
 - View the top 10 scores.
-<img src="" width="500" height="300">
+<img src="https://github.com/TaoweiLi/Cat_Game/raw/main/asset/features-record.gif" width="500" height="300">
 ## **Technologies, Libraries, APIs**
 
 ​​This project was implemented with the following technologies:
